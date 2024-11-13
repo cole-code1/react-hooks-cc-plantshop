@@ -5,7 +5,7 @@ function PlantCard({ plant, setPlants }) {
 
   // Toggle Sold Out status
   const SoldOut = () => {
-    fetch(`  http://localhost:6001/plants${plant.id}`, {
+    fetch(`  https://react-hooks-cc-plantshop-8-l45f.onrender.com/plants${plant.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +26,7 @@ function PlantCard({ plant, setPlants }) {
 
 
   const deletePlant = () => {
-    fetch(` http://localhost:6001/plants/${plant.id}`, {
+    fetch(` https://react-hooks-cc-plantshop-8-l45f.onrender.com/plants/${plant.id}`, {
       method: "DELETE",
     })
       .then((response) => {
