@@ -8,7 +8,7 @@ function PlantPage() {
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    fetch("  https://react-hooks-cc-plantshop-8-l45f.onrender.com/plants")
+    fetch("  https://react-hooks-cc-plantshop-9-y2uz.onrender.com/plants")
       .then((response) => response.json())
       .then((data) => {
         setPlants(data);
