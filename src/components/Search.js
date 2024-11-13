@@ -1,14 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
-function Search() {
+function Search({ plants, setPlants }) {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+    setPlants(plants.filter(plant => plant.name.toLowerCase().includes(query)));
+  };
+  
+
   return (
-    <div className="searchbar">
-      <label htmlFor="search">Search Plants:</label>
+    <div>
+      <label>Search:</label>
       <input
         type="text"
-        id="search"
-        placeholder="Type a name to search..."
-        onChange={(e) => console.log("Searching...")}
+        placeholder="Search for a plant..."
+        value={searchQuery}
+        onChange={handleSearch}
       />
     </div>
   );
